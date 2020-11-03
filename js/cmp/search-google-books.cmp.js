@@ -11,7 +11,7 @@ export default {
                 <h3>Add from google books:</h3>
                 <label>
                     <input type="search" v-model:value="term" placeHolder="search book name or subject">
-                    <button v-if="term" @click="searchTerm">add</button>
+                    <button v-if="term" @click="btnFunc">{{btnMode}}</button>
                 </label>
             </div>
             <div class="select-search-res" v-if="totalItems">
@@ -31,6 +31,14 @@ export default {
             books: []
         }
     },
+    computed:{
+        btnMode(){
+            return (this.totalItems)?  'Add all the books':'Search';
+        },
+        btnFunc(){
+            return (this.totalItems)? this.addToShop : this.searchTerm;
+        }
+    },
     methods:{
         searchTerm(){
             booksService.searchGoogleBook(this.term)
@@ -46,11 +54,17 @@ export default {
                     eventBus.$emit('user-msg',{txt:'google books not respons', type:'alert'})               
                 })
         },
+        addToShop(){
+            booksService.addBooks(this.books)
+            console.log('add all the book to my shop', this.books);
+            eventBus.$emit('user-msg',{txt:`Added your books:`, type:'success'}) 
+            
+        },
         removeBookFromList(bookId){
             console.log("removeBookFromList -> bookId", bookId)
             const bookIdx = this.books.findIndex(book => book.id === bookId);
             console.log("removeBookFromList -> bookIdx", bookIdx)
             this.books.splice(bookIdx,1)
-        }
+        },
     }
 }
