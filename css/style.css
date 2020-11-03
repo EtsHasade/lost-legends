@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: monsterrat;
+    src: url(../fonts/Montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: black-monsterrat;
+    src: url(../fonts/Montserrat/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: cinzel;
+    src: url(../fonts/Cinzel/Cinzel-Regular.ttf);
+}
+
+@font-face {
+    font-family: cinzel-semibold;
+    src: url(../fonts/Cinzel/Cinzel-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: parchm;
+    src: url(../fonts/parchm/PARCHM.TTF);
+}
+
+
+/*------------- basic ---------------------------*/
+:root {
+    --BG-Color: #21927f94;
+    --BG-Hover:#c6fff694;
+    --Font-regular: cinzel, serif;
+    --Font-bold: cinzel-semibold, serif;
+}
+
+html {
+    font-family: var(--Font-regular);
+    font-size: 14px;
+
+}
+
+body {
+    background: url(../img/WaterColor5.jpg);
+    background-size: 70%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+/*----------------- global layout ------------------*/
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+/*-------------- component -------------------------*/
+
+.header-app {
+    background-color: var(--BG-Color);
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-app .logo{
+    margin-inline-start: 1em;
+    font-family: var(--Font-bold);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header-app .main-nav{
+    margin-inline-end: 1em;
+}
+
+.header-app .user-msg {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    padding: 0 1em;
+    font-size: var(--Font-bold);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.header-app .user-msg.success {
+    background-color: #72e78c;
+    box-shadow: 2px 2px 3px #045335af;
+    
+}
+
+.header-app .user-msg.alert {
+    background-color: #e78d72;
+    box-shadow: 2px 2px 3px #531d04af;
+    
+}
+
+.main-nav a{
+    text-decoration: none;
+    font-family: var(--Font-bold);
+    margin-inline-start: 1em;
+}
+
+.main-nav a:hover{
+    text-shadow: 0 0 3px var(--BG-Hover);
+    transition: 0.3s;
+}
+
+.main-nav a::after{
+    content: '▣';
+    margin-inline-start: 1em;
+}
+
+.main-nav a:first-child::before{
+    content: '▣';
+    margin-inline-end: 1em;
+}
+
+
+.book-filter {
+    background-color: var(--BG-Color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px,1fr));
+    text-align: center;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+
+.book-filter *{
+ display: block;
+}
+
+.book-filter h2{
+ grid-column: 1/-1;
+ margin: 0;
+}
+
+.book-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.book-preview {
+    background-color: var(--BG-Color);
+    height: 100%;
+    cursor: pointer;
+}
+.book-preview .preview-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.book-preview .preview-details *:first-child{
+    height: 100%;
+}
+
+.book-preview:hover {
+    background-color: var(--BG-Hover);
+    transform: scale(1.02);
+    transition: 0.1s;
+}
+
+.book-preview .curr-icon{
+    font-size: small;
+}
+
+
+.book-preview img{
+    width: 90%;
+    margin-top: 0.5em;
+}
+
+.book-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px,1fr));
+    grid-template-rows: 1fr 2em minmax(0,1fr) repeat(auto-fit, 300px);
+    gap: 1em;
+    justify-content: center;
+}
+
+.book-details >*{
+    padding: 3em;
+    background-color: var(--BG-Color);
+
+}
+
+.book-details .btn-add-review-container{
+    grid-column: 1/-1;
+    padding: 0.2em;
+}
+
+.book-details .details-container>.details-header{
+    grid-column: 1/-3;
+    border-bottom: 1px solid #000;
+}
+
+.book-details .details-container>.details-header h2{
+    text-transform: capitalize;
+    font-family: var(--Font-bold);
+    margin: 0;
+}
+
+.book-details .details-container>.details-header h3{
+    margin: 0;
+}
+
+.book-details .details-column2 {
+    position: relative;
+}
+
+.book-details .details-column2 button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+.book-details img{
+    width: 100%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.425);
+}
+
+.book-details .bookPrice.red{
+    color: red;
+}
+
+.book-details .bookPrice.green{
+    color: green;
+}
+
+.book-details .details-container .in-details-author-list {
+    display: inline-block;
+    padding: 0.3rem;
+    margin: 0.2em;
+}
+
+.book-details .details-container .in-details-author-list:not(:last-child) {
+    content: '|';
+    margin: 1em;
+}
+
+.book-details .in-details-tag-list, .sale-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.685);
+    font-size: 0.7rem;    
+    padding: 0.3rem;
+    margin: 0.2em;
+}
+
+
+.home-page, .about-page {
+    font-family: var(--Font-bold);
+    background-color: var(--BG-Color);
+    padding: 2em;
+    display: flex;
+
+}
+
+.home-page img, .about-page img{
+    object-position: center;
+    object-fit: contain;
+    width: 300px;
+    padding: 1em;
+    background-color: var(--BG-Color);
+    /* mix-blend-mode:  overlay; */
+
+}
+
+.book-details .add-review-form {
+    /* grid-row-start: -2; */
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px,1fr));
+    grid-template-rows: 1fr 2fr;
+    gap: 1em;
+    justify-content: center;
+    padding: 4em;
+}
+
+.add-review-form .review-input {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+}
+
+.show-reviews {
+    grid-row-end: span 1;
+    grid-column: 1/-1;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+
+.show-reviews button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
