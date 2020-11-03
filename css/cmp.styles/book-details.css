@@ -1,0 +1,79 @@
+
+.book-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(140px,1fr));
+    grid-template-rows: 1fr 2em minmax(0,1fr) repeat(auto-fit, 300px);
+    gap: 1em;
+    justify-content: center;
+}
+
+.book-details >*{
+    padding: 3em;
+    background-color: var(--BG-Color);
+
+}
+
+.book-details .btn-add-review-container{
+    grid-column: 1/-1;
+    padding: 0.2em;
+}
+
+.book-details .details-container>.details-header{
+    grid-column: 1/-3;
+    border-bottom: 1px solid #000;
+}
+
+.book-details .details-container>.details-header h2{
+    text-transform: capitalize;
+    font-family: var(--Font-bold);
+    margin: 0;
+}
+
+.book-details .details-container>.details-header h3{
+    margin: 0;
+}
+
+.book-details .details-column2 {
+    position: relative;
+}
+
+.book-details .details-column2 button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+.book-details img{
+    width: 100%;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.425);
+}
+
+.book-details .bookPrice.red{
+    color: red;
+}
+
+.book-details .bookPrice.green{
+    color: green;
+}
+
+.book-details .details-container .in-details-author-list {
+    display: inline-block;
+    padding: 0.3rem;
+    margin: 0.2em;
+}
+
+.book-details .details-container .in-details-author-list:not(:last-child) {
+    content: '|';
+    margin: 1em;
+}
+
+.book-details .in-details-tag-list, .sale-tag {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.685);
+    font-size: 0.7rem;    
+    padding: 0.3rem;
+    margin: 0.2em;
+}
+

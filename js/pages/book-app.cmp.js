@@ -2,6 +2,7 @@
 import {booksService} from '../services/book-service.js';
 import bookList from '../cmp/book-list.cmp.js'
 import bookFilter from '../cmp/book-filter.cmp.js'
+import searchGoogleBook from '../cmp/search-google-books.cmp.js'
 
 
 export default {
@@ -42,9 +43,11 @@ export default {
     components: {
         bookList,
         bookFilter,
+        searchGoogleBook
     },
     template:`
         <section class="book-app">
+            <search-google-book></search-google-book>
             <book-filter @filtered="setFilter"></book-filter>
             <book-list  :books="booksToShow" @selected="selectBook"></book-list>
         </section>

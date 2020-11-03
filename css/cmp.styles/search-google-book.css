@@ -1,0 +1,8 @@
+
+
+.search-google-book {
+    background-color: var(--BG-Color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

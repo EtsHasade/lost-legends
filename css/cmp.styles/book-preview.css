@@ -1,0 +1,31 @@
+
+.book-preview {
+    background-color: var(--BG-Color);
+    height: 100%;
+    cursor: pointer;
+}
+.book-preview .preview-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.book-preview .preview-details *:first-child{
+    height: 100%;
+}
+
+.book-preview:hover {
+    background-color: var(--BG-Hover);
+    transform: scale(1.02);
+    transition: 0.1s;
+}
+
+.book-preview .curr-icon{
+    font-size: small;
+}
+
+
+.book-preview img{
+    width: 90%;
+    margin-top: 0.5em;
+}

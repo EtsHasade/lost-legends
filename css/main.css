@@ -1,0 +1,57 @@
+@import './basics.css';
+@import './cmp.styles/app-header.css';
+@import './cmp.styles/book-filter.css';
+@import './cmp.styles/book-list.css';
+@import './cmp.styles/book-preview.css';
+@import './cmp.styles/book-details.css';
+@import './cmp.styles/review-add.css';
+@import './cmp.styles/show-reviews.css';
+@import './cmp.styles/search-google-book.css';
+
+@import './cmp.styles/home-page.css';
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: monsterrat;
+    src: url(../fonts/Montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: black-monsterrat;
+    src: url(../fonts/Montserrat/Montserrat-Black.ttf);
+}
+
+@font-face {
+    font-family: cinzel;
+    src: url(../fonts/Cinzel/Cinzel-Regular.ttf);
+}
+
+@font-face {
+    font-family: cinzel-semibold;
+    src: url(../fonts/Cinzel/Cinzel-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: parchm;
+    src: url(../fonts/parchm/PARCHM.TTF);
+}
+
+
+/*------------- basic ---------------------------*/
+
+/*----------------- global layout ------------------*/
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+/*-------------- component -------------------------*/
+

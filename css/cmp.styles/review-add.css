@@ -1,0 +1,16 @@
+
+.add-review-form {
+    /* grid-row-start: -2; */
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(140px,1fr));
+    grid-template-rows: 1fr 2fr;
+    gap: 1em;
+    justify-content: center;
+    padding: 4em;
+}
+
+.add-review-form .review-input {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+}
