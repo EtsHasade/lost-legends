@@ -17,7 +17,12 @@ export default {
             <div class="select-search-res" v-if="totalItems">
                 <ul>
                     <li class="book-to-choose" v-for="book in books" :key="book.id">
-                        <h4>{{book.title}}</h4><button @click="removeBookFromList(book.id)">⨂</button>
+                        <h3>{{book.title}} </h3>
+                        <h4>{{book.authors.join(', ')}}</h4>
+                        <div>
+                            <button @click="removeBookFromList(book.id)">x</button>
+                            <button @click="removeBookFromList(book.id)">+</button>
+                        </div>
                     </li>
                 </ul>
             </div>
